@@ -1,11 +1,11 @@
-%Licensed under GPL v3
+%Licensed under BSD 3 Clause\
 %THis program is written by Bruce Li (isanoob1897@outlook.com)
 function r = bestFit(x, y)
-    p=polyfit(x, y, 1);
+    p=polyfit(x, y, 1)
     r = polyval(p, x);
 end
 % data for Aluminum
-x1 = [
+y1 = [
 0
 8.41
 20.87
@@ -18,10 +18,10 @@ x1 = [
 13.65
 13.38
 7.3
-40.03
+%40.03
 23.22    
 ];
-y1 = [
+x1 = [
 0
 3.3
 8.0
@@ -34,12 +34,13 @@ y1 = [
 5.0
 5.1
 3.1
-2.5
+%2.5
 8];
 scatter(x1, y1, "green")
 hold on
 % data for Copper
-y2 = [
+x2 = [
+0
 1.1
 2.3
 3.8
@@ -54,7 +55,8 @@ y2 = [
 5.1
 3    
 ];
-x2 = [
+y2 = [
+0
 10.51
 21.21
 24.16
@@ -72,13 +74,14 @@ x2 = [
 scatter(x2, y2, "red")
 hold on
 % glass data
-y = [
+x = [
+0
 17.7
 8.9
 6
 3.0
 7.2
-40.4
+%40.4
 8.0
 7.0
 4.8
@@ -87,13 +90,14 @@ y = [
 8.2
 10    
 ];
-x = [
+y = [
+0
 42.87
 21.78
 12.92
 8.49
 18.38
-40.71
+%40.71
 21.67
 14.06
 15.16
@@ -105,12 +109,11 @@ x = [
 scatter (x, y, "blue")
 hold on
 legend("Aluminum", "Copper", "Glass")
-xlabel("Mass")
-ylabel("Volume")
+xlabel("Volume")
+ylabel("Mass")
 plot(x1, bestFit(x1, y1))
 plot(x2, bestFit(x2, y2))
 plot(x, bestFit(x, y))
-
 
 
 
